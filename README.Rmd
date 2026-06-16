@@ -1,0 +1,54 @@
+
+# Functional Status as a Predictor of Survival in Advanced Lung Cancer
+
+## Overview
+This project analyzes data from 228 patients with advanced lung cancer to evaluate the relationship between age, functional status, and survival outcomes. Specifically, it explores whether measures of functional status, including ECOG and Karnofsky performance scores, are more closely associated with survival than age alone.
+
+## Data Source 
+Data sourced from the `lung` dataset in the R `survival` package. Variables examined include age, survival time (days), ECOG performance 
+status, physician- and patient-reported Karnofsky scores, caloric intake, and weight loss. 
+
+## File Structure 
+
+```
+Clinical-Trial-Report/
+│
+├── report.qmd
+│   └── Main Quarto report containing data analysis, visualizations,
+│       statistical testing, and written findings.
+│
+├── README.md
+│   └── Project overview, methodology, and repository documentation.
+│
+└── R/
+    ├── data_prep.R
+    │   └── Data cleaning, variable creation, and preprocessing steps.
+    │
+    └── lung_clean.rds
+        └── Cleaned analytical dataset used throughout the report.
+```
+
+## Dependencies 
+```
+install.packages(c("tidyverse", "gtsummary",  "survival"))
+```
+## Key Findings 
+- The majority of patients in this cohort were between 55 and 74 years of age, with relatively few patients younger than 55 or older than 75.
+
+- Functional status generally declined with age, as older patients exhibited higher ECOG scores, lower Karnofsky scores, and lower median caloric intake at baseline.
+
+- Survival time did not differ significantly across age groups (χ²(3) = 3.04, p = .386), suggesting that age alone was not strongly associated with survival outcomes in this cohort.
+
+- Survival time differed significantly across ECOG performance status categories (χ²(3) = 14.16, p = .003), indicating that patients with poorer functional status experienced shorter survival times.
+
+- Physician-reported Karnofsky scores demonstrated a similar relationship with survival, although the association did not reach statistical significance (χ²(5) = 10.10, p = .072).
+
+- All findings suggest that functional status measures may provide more clinically meaningful information regarding prognosis than chronological age alone among patients with advanced lung cancer.
+
+## Running Report 
+1. Clone the repository
+2. Open report.qmd in RStudio
+3. Render using Quarto (quarto render report.qmd)
+
+file.show("README.Rmd")
+
